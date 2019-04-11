@@ -1,9 +1,13 @@
-package com.pawn;
+package com;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
+@ServletComponentScan(basePackages = "com.config")
 @SpringBootApplication
+@MapperScan(basePackages = "com.mapper")
 public class PawnApplication {
 
     public static void main(String[] args) {
