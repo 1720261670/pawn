@@ -38,22 +38,35 @@
         </javaClientGenerator>
 
         <!-- 用户权限角色 -->
-        <table tableName="sys_user" ></table>
-        <table tableName="sys_role" ></table>
-        <table tableName="sys_user_role" ></table>
-        <table tableName="sys_menu" ></table>
-        <table tableName="sys_role_menu"></table>
+        <!--<table tableName="sys_user" ></table>-->
+        <!--<table tableName="sys_role" ></table>-->
+        <!--<table tableName="sys_user_role" ></table>-->
+        <!--<table tableName="sys_menu" ></table>-->
+        <!--<table tableName="sys_role_menu"></table>-->
 
-        <!--编写数据库文档-->
-        <table tableName="sys_log"></table>
-        <table tableName="address"></table>
-        <table tableName="brand"></table>
-        <table tableName="details"></table>
-        <table tableName="pawn_account"></table>
-        <table tableName="pawn_order"></table>
-        <table tableName="pawn_user"></table>
-        <table tableName="products"></table>
-        <table tableName="type"></table>
+        <!--&lt;!&ndash;编写数据库文档&ndash;&gt;-->
+        <!--<table tableName="sys_log"></table>-->
+        <!--<table tableName="address"></table>-->
+        <!--<table tableName="brand"></table>-->
+        <!--<table tableName="details"></table>-->
+        <!--<table tableName="pawn_account"></table>-->
+        <!--<table tableName="pawn_order"></table>-->
+        <!--<table tableName="pawn_user"></table>-->
+        <!--<table tableName="products"></table>-->
+        <!--<table tableName="type"></table>-->
+        <!--<table tableName="schedule_job"></table>-->
+        <!--<table tableName="schedule_job_log"></table>-->
+        <!--<table tableName="sys_log"></table>-->
+        <!--<table tableName="area"></table>-->
+        <!--<table tableName="city"></table>-->
+        <!--<table tableName="province"></table>-->
+        <!--<table tableName="pawn_log"></table>-->
+        <!--<table tableName="discount_coupon"></table>-->
+        <!--<table tableName="pawn_user_discount"></table>-->
+        <!--<table tableName="pawn_bank_card"></table>-->
+        <!--<table tableName="bank"></table>-->
+        <!--<table tableName="user_asset_details"></table>-->
+        <table tableName="order_products"></table>
 
     </context>
 </generatorConfiguration>

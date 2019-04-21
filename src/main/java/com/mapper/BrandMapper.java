@@ -3,6 +3,8 @@ package com.mapper;
 import com.entity.Brand;
 import com.entity.BrandExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface BrandMapper {
@@ -93,4 +95,5 @@ public interface BrandMapper {
      * @mbggenerated Mon Apr 08 22:05:46 CST 2019
      */
     int updateByPrimaryKey(Brand record);
+    List<Map<String,Object>> findBrandByTypeId(int typeId);
 }

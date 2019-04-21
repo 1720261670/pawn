@@ -331,4 +331,7 @@
       page_view = #{pageView,jdbcType=INTEGER}
     where pro_id = #{proId,jdbcType=INTEGER}
   </update>
+  <update id="updatePageView" parameterType="int" >
+    UPDATE products SET page_view = page_view + 1 WHERE pro_id = #{proId}
+  </update>
 </mapper>

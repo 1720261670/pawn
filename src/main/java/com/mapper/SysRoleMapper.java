@@ -93,4 +93,7 @@ public interface SysRoleMapper {
      * @mbggenerated Mon Apr 08 22:05:46 CST 2019
      */
     int updateByPrimaryKey(SysRole record);
+
+   List<String> findRolesByPawnUserId(int userId);
+    List<String> findRolesByUserId(long userId);
 }

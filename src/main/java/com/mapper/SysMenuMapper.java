@@ -93,4 +93,11 @@ public interface SysMenuMapper {
      * @mbggenerated Mon Apr 08 22:05:46 CST 2019
      */
     int updateByPrimaryKey(SysMenu record);
+    List<SysMenu> findMenuNotButton();
+    List<String> findPermsByPawnUserId(int userId);
+    List<String> findPermsByUserId(long userId);
+    //根据查询目录
+    List<SysMenu> findDir(long userId);
+    //查询目录下的菜单
+    List<SysMenu> findMenu(@Param("parentId") long parenId,@Param("userId")long userId);
 }

@@ -268,4 +268,8 @@
       brand_name = #{brandName,jdbcType=VARCHAR}
     where brand_id = #{brandId,jdbcType=INTEGER}
   </update>
+
+  <select id="findBrandByTypeId" parameterType="int" resultType="java.util.Map">
+    SELECT b.* ,t.type_name FROM brand b ,`type` t WHERE b.`type_id`=t.`type_id` AND t.type_id=#{typeId}
+  </select>
 </mapper>

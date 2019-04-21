@@ -330,4 +330,55 @@
       order_num = #{orderNum,jdbcType=INTEGER}
     where menu_id = #{menuId,jdbcType=BIGINT}
   </update>
+
+  <select id="findPermsByPawnUserId" parameterType="int" resultType="String">
+    SELECT DISTINCT m.perms  FROM sys_menu m
+    INNER JOIN sys_role_menu rm
+    ON m.menu_id=rm.menu_id
+    INNER JOIN sys_role r
+    ON r.`role_id`=rm.role_id
+    INNER JOIN pawn_user u
+    ON r.`role_id`=u.`role_id`
+    WHERE u.`user_id`=#{userId}
+  </select>
+  <select id="findPermsByUserId" parameterType="long" resultType="String">
+    SELECT DISTINCT m.perms  FROM sys_menu m
+INNER JOIN sys_role_menu rm
+ON m.menu_id=rm.menu_id
+INNER JOIN sys_role r
+ON r.`role_id`=rm.role_id
+INNER JOIN sys_user_role ur
+ON r.`role_id`=ur.`role_id`
+INNER JOIN sys_user u ON ur.`user_id`=u.`user_id`
+WHERE u.`user_id`=#{userId}
+  </select>
+  <select id="findMenuNotButton" resultMap="BaseResultMap">
+      select * from sys_menu where type!=2
+  </select>
+  <select id="findDir" resultMap="BaseResultMap" >
+SELECT DISTINCT m.perms,m.menu_id, m.parent_id, m.name, m.url,  m.type, m.icon
+    from sys_user u
+    INNER JOIN sys_user_role ur
+    on u.user_id = ur.user_id
+    INNER JOIN sys_role r
+    on ur.role_id = r.role_id
+    INNER JOIN sys_role_menu rm
+    on r.role_id = rm.role_id
+    inner JOIN sys_menu m
+    on rm.menu_id = m.menu_id
+    where u.user_id = #{userId} and m.type=0
+</select>
+  <select id="findMenu" resultMap="BaseResultMap" parameterType="java.util.Map">
+    SELECT DISTINCT m.perms,m.menu_id, m.parent_id, m.name, m.url,  m.type, m.icon
+      from sys_user u
+      INNER JOIN sys_user_role ur
+      on u.user_id = ur.user_id
+      INNER JOIN sys_role r
+      on ur.role_id = r.role_id
+      INNER JOIN sys_role_menu rm
+      on r.role_id = rm.role_id
+      inner JOIN sys_menu m
+      on rm.menu_id = m.menu_id
+      where u.user_id = #{userId} and m.parent_id=#{parentId} and m.type=1
+  </select>
 </mapper>

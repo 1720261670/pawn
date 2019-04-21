@@ -93,4 +93,6 @@ public interface ProductsMapper {
      * @mbggenerated Mon Apr 08 22:05:46 CST 2019
      */
     int updateByPrimaryKey(Products record);
+
+    int updatePageView(int proId);
 }
